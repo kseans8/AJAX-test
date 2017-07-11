@@ -1,4 +1,5 @@
 require "sinatra"
+require "json"
 
 set :bind, '0.0.0.0'
 
@@ -13,6 +14,16 @@ get "/new-question" do
   @options = question_hash[question_hash.keys.first].shuffle
 
   erb :index
+end
+
+get "/new-question.json" do
+  content_type :json
+  question_hash = random_question
+  question = question_hash.keys.first
+  answer = question_hash[:answer]
+  options = question_hash[question_hash.keys.first].shuffle
+
+  { question: question, answer: answer, options: options }.to_json
 end
 
 def random_question
