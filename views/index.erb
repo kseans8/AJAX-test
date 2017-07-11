@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Middle School Quiz</title>
+  </head>
+
+  <body>
+    <h1>Can you guess the correct answer?</h1>
+
+    <p>Your question is:
+      <span id="fortune">
+        <%= @question %>
+      </span>
+    </p>
+
+    <ul id="answers">
+      <% @options.each do |option|%>
+        <li> <%= option %> </li>
+      <% end %>
+    </ul>
+
+    <form action="/new-question" method="get">
+      <button id="new-question" type="submit">Random Question!</button>
+    </form>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="/js/fortune.js"></script>
+  </body>
+</html>
