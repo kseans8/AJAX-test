@@ -1,6 +1,5 @@
 require "sinatra"
-require "json"
-require "pry"
+
 set :bind, '0.0.0.0'
 
 get "/" do
@@ -12,7 +11,7 @@ get "/new-question" do
   @question = question_hash.keys.first
   @answer = question_hash[:answer]
   @options = question_hash[question_hash.keys.first].shuffle
-  # binding.pry
+
   erb :index
 end
 
