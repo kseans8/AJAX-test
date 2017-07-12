@@ -42,10 +42,10 @@ QUESTIONS = [
   },
   {
     "Which number is a prime number?": [
-      "4",
-      "6",
-      "9",
-      "7"
+      "15",
+      "21",
+      "39",
+      "19"
     ],
     "answer": "7"
   },
@@ -55,5 +55,28 @@ QUESTIONS = [
       "False"
     ],
     "answer": "True"
+  },
+  {
+    "Which of the following is largest?": [
+      "Electron",
+      "Proton",
+      "Atom",
+      "Molecule"
+    ],
+    "answer": "Molecule"
+  },
+  {
+    "A metaphor is figure of speech in which a word or phrase is applied to an object or action to which it is not literally applicable using 'like' or 'as'": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "In the equation 'y=2x+5' which variable is the independant variable?": [
+      "y",
+      "x"
+    ],
+    "answer": "x"
   }
 ]
