@@ -1,6 +1,4 @@
-$(document).ready(function() {
-  $("input:radio").change(function () {
-    console.log('asdf');
-    $("button#next-question").removeAttr("disabled");
-  });
+$('#answers').on('click', 'input', function(event) {
+  console.log('asdf');
+  $("button#next-question").removeAttr("disabled");
 });
