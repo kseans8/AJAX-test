@@ -48,5 +48,12 @@ QUESTIONS = [
       "7"
     ],
     "answer": "7"
+  },
+  {
+    "Every sentence must have a verb.": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
   }
 ]

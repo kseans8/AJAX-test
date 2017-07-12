@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Middle School Quiz</title>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="/js/getQuestion.js"></script>
+    <script src="/js/nextQuestion.js"></script>
   </head>
 
   <body>
@@ -14,15 +18,14 @@
       </span>
     </p>
 
-    <ul id="answers">
+    <form id="answers">
       <% @options.each do |option|%>
-        <li><%=option%></li>
+        <input type="radio" name="option" value=<%= option %>> <%= option %> <br>
       <% end %>
-    </ul>
+      <button id="next-question" disabled>Next Question</button>
+    </form>
 
-    <button id="new-question" type="submit">Random Question!</button>
+    <p id="answer" hidden> <%= @answer %> </p>
 
-    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="/js/getQuestion.js"></script>
   </body>
 </html>
