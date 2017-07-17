@@ -5,8 +5,6 @@ $('#next-question').on('click', function(event) {
   var isCorrect = false;
 
   $('input.answerButtons').each(function() {
-    console.log(this.checked);
-
     if (this.checked === true) {
       if (this.value === $('#answer').text()) {
         isCorrect = true;
