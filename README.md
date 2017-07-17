@@ -12,6 +12,7 @@ then run
 ```
 ruby server.rb
 ```
+and open [the test!](localhost:4567)
 
 ### To-do list:
 - [x] Randomize questions
