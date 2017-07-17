@@ -18,8 +18,9 @@ ruby server.rb
 - [x] Implement ajax so page doesn't reload every time a new question is called
 - [x] Create 10 questions middle school level questions
 - [ ] Remove question from array once it has been selected
-- [ ] Create scoring and return results when the quiz is done
-- [ ] Add timer (because speed is just as important as accuracy)
+- [x] Create scoring
+- [ ] Results page when test is done
+- [x] Add timer (because speed is just as important as accuracy)
 - [ ] CSS
 - [ ] Convert to React
 - [ ] Implement promises
