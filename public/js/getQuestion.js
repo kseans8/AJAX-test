@@ -5,17 +5,16 @@ $('#next-question').on('click', function(event) {
   var isCorrect = false;
 
   $('input.answerButtons').each(function() {
-    if (this.checked === true) {
-      if (this.value === $('#answer').text()) {
-        isCorrect = true;
-      }
+    if (this.checked === true && this.value === $('#answer').text()) {
+      isCorrect = true;
     }
   });
 
   $('#question_count').text(parseInt(question_count) + 1);
+
   if (isCorrect) {
     $('#correct_count').text(parseInt(correct_count) + 1);
-  }else {
+  } else {
     $('#incorrect_count').text(parseInt(incorrect_count) + 1);
   }
 
