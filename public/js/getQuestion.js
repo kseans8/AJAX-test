@@ -1,5 +1,25 @@
 $('#next-question').on('click', function(event) {
-  console.log("shit");
+  var question_count = $('#question_count').text();
+  var correct_count = $('#correct_count').text();
+  var incorrect_count = $('#incorrect_count').text();
+  var isCorrect = false;
+
+  $('input.answerButtons').each(function() {
+    console.log(this.checked);
+
+    if (this.checked === true) {
+      if (this.value === $('#answer').text()) {
+        isCorrect = true;
+      }
+    }
+  });
+
+  $('#question_count').text(parseInt(question_count) + 1);
+  if (isCorrect) {
+    $('#correct_count').text(parseInt(correct_count) + 1);
+  }else {
+    $('#incorrect_count').text(parseInt(incorrect_count) + 1);
+  }
 
   var request = $.ajax({
     method: 'GET',
@@ -11,7 +31,7 @@ $('#next-question').on('click', function(event) {
     $('#answers').empty();
     for (var ii = 0; ii < newQuestion.options.length; ii++) {
       var answerValue = newQuestion.options[ii];
-      $('#answers').append('<input type="radio" name="option" value=' + answerValue + '> ' + answerValue + '<br>');
+      $('#answers').append('<input type="radio" name="answerButtons" class="answerButtons" value=' + answerValue + ' />' + answerValue + '<br>');
     }
     $('#answer').text(newQuestion.answer);
     $("button#next-question").attr('disabled', 'disabled');

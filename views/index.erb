@@ -9,20 +9,28 @@
   <body>
     <h1>Can you guess the correct answer?</h1>
 
+    <div id="test_data">
+      <div id="question_count">1</div>
+      <div id="correct_count">0</div>
+      <div id="incorrect_count">0</div>
+    </div>
+
     <p>Your question is:
       <span id="question">
         <%= @question %>
       </span>
     </p>
 
-    <div id="answers">
-      <% @options.each do |option|%>
-        <input type="radio" name="option" value=<%= option %>> <%= option %> <br>
-      <% end %>
-    </div>
+    <form id="form">
+      <div id="answers">
+        <% @options.each do |option|%>
+        <input type="radio" name="answerButtons" class="answerButtons" value=<%= option %> /><%= option %><br>
+        <% end %>
+      </div>
+      <button type="button" id="next-question" disabled>Next Question</button>
+    </form>
 
-    <button id="next-question" disabled>Next Question</button>
-    <p id="answer" hidden> <%= @answer %> </p>
+    <p id="answer" hidden><%= @answer %></p>
 
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="/js/getQuestion.js"></script>

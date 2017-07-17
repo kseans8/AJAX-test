@@ -8,6 +8,9 @@ get "/" do
 end
 
 get "/new-question" do
+  # dont start with a question, but a start now button.
+  # when start button is clicked timer starts
+  # this can be done using more ajax
   question_hash = random_question
   @question = question_hash.keys.first
   @answer = question_hash[:answer]
@@ -47,7 +50,7 @@ QUESTIONS = [
       "39",
       "19"
     ],
-    "answer": "7"
+    "answer": "19"
   },
   {
     "Every sentence must have a verb.": [
